@@ -504,6 +504,9 @@ XUI_BIN_FOLDER="bin" XUI_DB_FOLDER="/etc/x-ui" go build main.go
 
 </details>
 
+## Interfaz de usuario de suscripción
+Puedes usar este repositorio para crear una interfaz de usuario de suscripción para tu panel [TX-UI Theming Hub](https://github.com/AghayeCoder/TX-ThemeHub)
+
 ## Gracias a
 - [@Incognito-Coder](https://github.com/incognito-coder) por su contribución en este proyecto
 - un agradecimiento especial a todos los colaboradores

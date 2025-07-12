@@ -531,6 +531,9 @@ XUI_BIN_FOLDER="bin" XUI_DB_FOLDER="/etc/x-ui" go build main.go
 
 </details>
 
+## Интерфейс подписки
+Вы можете использовать этот репозиторий для создания интерфейса подписки для вашей панели [TX-UI Theming Hub](https://github.com/AghayeCoder/TX-ThemeHub)
+
 ## Спасибо
 - [@Incognito-Coder](https://github.com/incognito-coder) за его вклад в этот проект
 - особая благодарность всем участникам

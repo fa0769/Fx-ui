@@ -537,6 +537,9 @@ XUI_BIN_FOLDER="bin" XUI_DB_FOLDER="/etc/x-ui" go build main.go
 
 </details>
 
+## Subscription UI
+You can use this repository to create a subscription UI for your panel [TX-UI Theming Hub](https://github.com/AghayeCoder/TX-ThemeHub)
+
 ## Thanks To
 - [@Incognito-Coder](https://github.com/incognito-coder) for his contribution in this project
 - special thanks to all contributors

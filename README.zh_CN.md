@@ -527,6 +527,9 @@ XUI_BIN_FOLDER="bin" XUI_DB_FOLDER="/etc/x-ui" go build main.go
 
 </details>
 
+## 订阅 UI
+您可以使用此代码库为您的面板创建订阅 UI [TX-UI 主题中心](https://github.com/AghayeCoder/TX-ThemeHub)
+
 ## 感谢
 - [@Incognito-Coder](https://github.com/incognito-coder) 对本项目的贡献
 - 特别感谢所有贡献者

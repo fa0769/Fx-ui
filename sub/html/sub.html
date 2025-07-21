@@ -130,6 +130,10 @@
                 onclick="window.location.href='v2rayng://install-config?url={{ .subUrl }}';">
             <span>افزودن به V2RayNG</span>
         </button>
+        <button class="flex items-center gap-2 px-3 py-3 bg-green-500 text-white rounded-xl hover:bg-green-400"
+                onclick="copyToClipboard('{{ .jsonUrl }}')">
+            <span>کپی JSON</span>
+        </button>
     </div>
     <div class="mt-6 text-sm text-gray-400">طراحی با <i class="text-red-500	fa fa-heart"></i> توسط <a
             href="https://github.com/aghayecoder/tx-ui">تی

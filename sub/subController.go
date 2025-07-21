@@ -97,7 +97,7 @@ func (a *SUBController) subs(c *gin.Context) {
 		upValue := formatBytes(headerMap["upload"], 2)
 		downValue := formatBytes(headerMap["download"], 2)
 		totalValue := formatBytes(headerMap["total"], 2)
-
+		subJsonUrl := "https://" + c.Request.Host + a.subJsonPath + subId
 		currentURL := "https://" + c.Request.Host + c.Request.RequestURI
 
 		if strings.Contains(acceptHeader, "text/html") {
@@ -115,6 +115,7 @@ func (a *SUBController) subs(c *gin.Context) {
 					"downloadByte": headerMap["download"],
 					"sId":          subId,
 					"subUrl":       currentURL,
+					"jsonUrl":      subJsonUrl,
 				})
 			}
 		} else {

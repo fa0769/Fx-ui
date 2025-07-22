@@ -347,3 +347,28 @@ func (a *InboundController) disabled(c *gin.Context) {
 	}
 	jsonObj(c, disabledClients, nil)
 }
+
+func (a *InboundController) updateClientTraffic(c *gin.Context) {
+	email := c.Param("email")
+
+	// Define the request structure for traffic update
+	type TrafficUpdateRequest struct {
+		Upload   int64 `json:"upload"`
+		Download int64 `json:"download"`
+	}
+
+	var request TrafficUpdateRequest
+	err := c.ShouldBindJSON(&request)
+	if err != nil {
+		jsonMsg(c, I18nWeb(c, "pages.inbounds.update"), err)
+		return
+	}
+
+	err = a.inboundService.UpdateClientTrafficByEmail(email, request.Upload, request.Download)
+	if err != nil {
+		jsonMsg(c, I18nWeb(c, "somethingWentWrong"), err)
+		return
+	}
+
+	jsonMsg(c, I18nWeb(c, "pages.inbounds.update"), nil)
+}

@@ -51,6 +51,7 @@ func (a *APIController) initRouter(g *gin.RouterGroup) {
 		{"POST", "/onlines", a.inboundController.onlines},
 		{"POST", "/depleted", a.inboundController.depleted},
 		{"POST", "/disabled", a.inboundController.disabled},
+		{"POST", "/updateClientTraffic/:email", a.inboundController.updateClientTraffic},
 	}
 
 	for _, route := range inboundRoutes {

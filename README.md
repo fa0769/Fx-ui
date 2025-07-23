@@ -474,28 +474,29 @@ than one, Just separate them with ,)
 - `/login` with `POST` user data: `{username: '', password: ''}` for login
 - `/panel/api/inbounds` base for following actions:
 
-| Method | Path                               | Action                                      |
-|:------:|------------------------------------|---------------------------------------------|
-| `GET`  | `"/list"`                          | Get all inbounds                            |
-| `GET`  | `"/get/:id"`                       | Get inbound with inbound.id                 |
-| `GET`  | `"/getClientTraffics/:email"`      | Get Client Traffics with email              |
-| `GET`  | `"/getClientTrafficsById/:id"`     | Get client's traffic By ID                  |
-| `GET`  | `"/createbackup"`                  | Telegram bot sends backup to admins         |
-| `POST` | `"/add"`                           | Add inbound                                 |
-| `POST` | `"/del/:id"`                       | Delete Inbound                              |
-| `POST` | `"/update/:id"`                    | Update Inbound                              |
-| `POST` | `"/clientIps/:email"`              | Client Ip address                           |
-| `POST` | `"/clearClientIps/:email"`         | Clear Client Ip address                     |
-| `POST` | `"/addClient"`                     | Add Client to inbound                       |
-| `POST` | `"/:id/delClient/:clientId"`       | Delete Client by clientId\*                 |
-| `POST` | `"/updateClient/:clientId"`        | Update Client by clientId\*                 |
-| `POST` | `"/:id/resetClientTraffic/:email"` | Reset Client's Traffic                      |
-| `POST` | `"/resetAllTraffics"`              | Reset traffics of all inbounds              |
-| `POST` | `"/resetAllClientTraffics/:id"`    | Reset traffics of all clients in an inbound |
-| `POST` | `"/delDepletedClients/:id"`        | Delete inbound depleted clients (-1: all)   |
-| `POST` | `"/onlines"`                       | Get Online users ( list of emails )         |
-| `POST` | `"/depleted"`                      | Get Depleted users ( list of emails )       |
-| `POST` | `"/disabled"`                      | Get Disabled users ( list of emails )       |
+| Method | Path                               | Action                                             |
+|:------:|------------------------------------|----------------------------------------------------|
+| `GET`  | `"/list"`                          | Get all inbounds                                   |
+| `GET`  | `"/get/:id"`                       | Get inbound with inbound.id                        |
+| `GET`  | `"/getClientTraffics/:email"`      | Get Client Traffics with email                     |
+| `GET`  | `"/getClientTrafficsById/:id"`     | Get client's traffic By ID                         |
+| `GET`  | `"/createbackup"`                  | Telegram bot sends backup to admins                |
+| `POST` | `"/add"`                           | Add inbound                                        |
+| `POST` | `"/del/:id"`                       | Delete Inbound                                     |
+| `POST` | `"/update/:id"`                    | Update Inbound                                     |
+| `POST` | `"/clientIps/:email"`              | Client Ip address                                  |
+| `POST` | `"/clearClientIps/:email"`         | Clear Client Ip address                            |
+| `POST` | `"/addClient"`                     | Add Client to inbound                              |
+| `POST` | `"/:id/delClient/:clientId"`       | Delete Client by clientId\*                        |
+| `POST` | `"/updateClient/:clientId"`        | Update Client by clientId\*                        |
+| `POST` | `"/updateClientTraffic/:email"`    | Update Client traffic by email,values are in bytes |
+| `POST` | `"/:id/resetClientTraffic/:email"` | Reset Client's Traffic                             |
+| `POST` | `"/resetAllTraffics"`              | Reset traffics of all inbounds                     |
+| `POST` | `"/resetAllClientTraffics/:id"`    | Reset traffics of all clients in an inbound        |
+| `POST` | `"/delDepletedClients/:id"`        | Delete inbound depleted clients (-1: all)          |
+| `POST` | `"/onlines"`                       | Get Online users ( list of emails )                |
+| `POST` | `"/depleted"`                      | Get Depleted users ( list of emails )              |
+| `POST` | `"/disabled"`                      | Get Disabled users ( list of emails )              |
 
 \- The field `clientId` should be filled by:
 
@@ -538,9 +539,12 @@ XUI_BIN_FOLDER="bin" XUI_DB_FOLDER="/etc/x-ui" go build main.go
 </details>
 
 ## Subscription UI
-You can use this repository to create a subscription UI for your panel [TX-UI Theming Hub](https://github.com/AghayeCoder/TX-ThemeHub)
+
+You can use this repository to create a subscription UI for your
+panel [TX-UI Theming Hub](https://github.com/AghayeCoder/TX-ThemeHub)
 
 ## Thanks To
+
 - [@Incognito-Coder](https://github.com/incognito-coder) for his contribution in this project
 - special thanks to all contributors
 

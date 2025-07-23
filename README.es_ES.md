@@ -15,7 +15,8 @@
 [![Downloads](https://img.shields.io/github/downloads/AghayeCoder/tx-ui/total.svg)](#)
 [![License](https://img.shields.io/badge/license-GPL%20V3-blue.svg?longCache=true)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
-> **Descargo de responsabilidad:** Este proyecto es solo para aprendizaje personal y comunicación, por favor no lo uses con fines ilegales, por favor no lo uses en un entorno de producción
+> **Descargo de responsabilidad:** Este proyecto es solo para aprendizaje personal y comunicación, por favor no lo uses
+> con fines ilegales, por favor no lo uses en un entorno de producción
 
 **Si este proyecto te es útil, podrías considerar darle una**:star2:
 
@@ -38,11 +39,12 @@ Para gestionar certificados SSL utilizando ACME:
 2. Ejecuta el comando `x-ui` en la terminal y elige `Gestión de Certificados SSL`.
 3. Se te presentarán las siguientes opciones:
 
-   - **Get SSL:** Obtener certificados SSL.
-   - **Revoke:** Revocar certificados SSL existentes.
-   - **Force Renew:** Forzar la renovación de certificados SSL.
-   - **Show Existing Domains:** Mostrar todos los certificados de dominio disponibles en el servidor.  
-   - **Set Certificate Paths for the Panel:** Especificar el certificado para tu dominio que será utilizado por el panel. 
+    - **Get SSL:** Obtener certificados SSL.
+    - **Revoke:** Revocar certificados SSL existentes.
+    - **Force Renew:** Forzar la renovación de certificados SSL.
+    - **Show Existing Domains:** Mostrar todos los certificados de dominio disponibles en el servidor.
+    - **Set Certificate Paths for the Panel:** Especificar el certificado para tu dominio que será utilizado por el
+      panel.
 
 ### Certbot
 
@@ -56,7 +58,8 @@ certbot renew --dry-run
 
 ### Cloudflare
 
-El script de gestión incluye una aplicación de certificado SSL integrada para Cloudflare. Para usar este script para solicitar un certificado, necesitas lo siguiente:
+El script de gestión incluye una aplicación de certificado SSL integrada para Cloudflare. Para usar este script para
+solicitar un certificado, necesitas lo siguiente:
 
 - Correo electrónico registrado en Cloudflare
 - Clave API Global de Cloudflare
@@ -68,11 +71,13 @@ El script de gestión incluye una aplicación de certificado SSL integrada para 
 2. Visita el enlace: [Tokens de API de Cloudflare](https://dash.cloudflare.com/profile/api-tokens).
 3. Haz clic en "Ver Clave API Global" (consulta la captura de pantalla a continuación):
    ![](media/APIKey1.PNG)
-4. Es posible que necesites volver a autenticar tu cuenta. Después de eso, se mostrará la Clave API (consulta la captura de pantalla a continuación):
+4. Es posible que necesites volver a autenticar tu cuenta. Después de eso, se mostrará la Clave API (consulta la captura
+   de pantalla a continuación):
    ![](media/APIKey2.png)
 
-Al utilizarlo, simplemente ingresa tu `nombre de dominio`, `correo electrónico` y `CLAVE API`. El diagrama es el siguiente:
-   ![](media/DetailEnter.png)
+Al utilizarlo, simplemente ingresa tu `nombre de dominio`, `correo electrónico` y `CLAVE API`. El diagrama es el
+siguiente:
+![](media/DetailEnter.png)
 
 </details>
 
@@ -101,7 +106,8 @@ esac
 wget https://github.com/AghayeCoder/tx-ui/releases/latest/download/x-ui-linux-${XUI_ARCH}.tar.gz
 ```
 
-2. Una vez que se haya descargado el paquete comprimido, ejecuta los siguientes comandos para instalar o actualizar x-ui:
+2. Una vez que se haya descargado el paquete comprimido, ejecuta los siguientes comandos para instalar o actualizar
+   x-ui:
 
 ```sh
 ARCH=$(uname -m)
@@ -189,10 +195,12 @@ eliminar tx-ui de docker
 </details>
 
 ## Configuración de Nginx
+
 <details>
   <summary>Haga clic aquí para configurar el proxy inverso</summary>
 
 #### Proxy inverso Nginx
+
 ```nginx
 location / {
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -207,8 +215,9 @@ location / {
 ```
 
 #### Nginx sub-path
+
 - EAsegúrese de que la "Ruta Raíz de la URL del Panel" en la configuración del panel `/sub` es la misma.
-- El `url` en la configuración del panel debe terminar con `/`.   
+- El `url` en la configuración del panel debe terminar con `/`.
 
 ```nginx
 location /sub {
@@ -222,6 +231,7 @@ location /sub {
     proxy_pass http://127.0.0.1:2053;
 }
 ```
+
 </details>
 
 ## SO Recomendados
@@ -247,37 +257,47 @@ location /sub {
 <details>
   <summary>Haz clic para detalles de arquitecturas y dispositivos compatibles</summary>
 
-Nuestra plataforma ofrece compatibilidad con una amplia gama de arquitecturas y dispositivos, garantizando flexibilidad en diversos entornos informáticos. A continuación se presentan las principales arquitecturas que admitimos:
+Nuestra plataforma ofrece compatibilidad con una amplia gama de arquitecturas y dispositivos, garantizando flexibilidad
+en diversos entornos informáticos. A continuación se presentan las principales arquitecturas que admitimos:
 
-- **amd64**: Esta arquitectura predominante es la estándar para computadoras personales y servidores, y admite la mayoría de los sistemas operativos modernos sin problemas.
+- **amd64**: Esta arquitectura predominante es la estándar para computadoras personales y servidores, y admite la
+  mayoría de los sistemas operativos modernos sin problemas.
 
-- **x86 / i386**: Ampliamente adoptada en computadoras de escritorio y portátiles, esta arquitectura cuenta con un amplio soporte de numerosos sistemas operativos y aplicaciones, incluidos, entre otros, Windows, macOS y sistemas Linux.
+- **x86 / i386**: Ampliamente adoptada en computadoras de escritorio y portátiles, esta arquitectura cuenta con un
+  amplio soporte de numerosos sistemas operativos y aplicaciones, incluidos, entre otros, Windows, macOS y sistemas
+  Linux.
 
-- **armv8 / arm64 / aarch64**: Diseñada para dispositivos móviles y embebidos contemporáneos, como teléfonos inteligentes y tabletas, esta arquitectura está ejemplificada por dispositivos como Raspberry Pi 4, Raspberry Pi 3, Raspberry Pi Zero 2/Zero 2 W, Orange Pi 3 LTS, entre otros.
+- **armv8 / arm64 / aarch64**: Diseñada para dispositivos móviles y embebidos contemporáneos, como teléfonos
+  inteligentes y tabletas, esta arquitectura está ejemplificada por dispositivos como Raspberry Pi 4, Raspberry Pi 3,
+  Raspberry Pi Zero 2/Zero 2 W, Orange Pi 3 LTS, entre otros.
 
-- **armv7 / arm / arm32**: Sirve como arquitectura para dispositivos móviles y embebidos más antiguos, y sigue siendo ampliamente utilizada en dispositivos como Orange Pi Zero LTS, Orange Pi PC Plus, Raspberry Pi 2, entre otros.
+- **armv7 / arm / arm32**: Sirve como arquitectura para dispositivos móviles y embebidos más antiguos, y sigue siendo
+  ampliamente utilizada en dispositivos como Orange Pi Zero LTS, Orange Pi PC Plus, Raspberry Pi 2, entre otros.
 
-- **armv6 / arm / arm32**: Orientada a dispositivos embebidos muy antiguos, esta arquitectura, aunque menos común, todavía se utiliza. Dispositivos como Raspberry Pi 1, Raspberry Pi Zero/Zero W, dependen de esta arquitectura.
+- **armv6 / arm / arm32**: Orientada a dispositivos embebidos muy antiguos, esta arquitectura, aunque menos común,
+  todavía se utiliza. Dispositivos como Raspberry Pi 1, Raspberry Pi Zero/Zero W, dependen de esta arquitectura.
 
-- **armv5 / arm / arm32**: Una arquitectura más antigua asociada principalmente con sistemas embebidos tempranos, es menos común hoy en día pero aún puede encontrarse en dispositivos heredados como versiones antiguas de Raspberry Pi y algunos teléfonos inteligentes más antiguos.
+- **armv5 / arm / arm32**: Una arquitectura más antigua asociada principalmente con sistemas embebidos tempranos, es
+  menos común hoy en día pero aún puede encontrarse en dispositivos heredados como versiones antiguas de Raspberry Pi y
+  algunos teléfonos inteligentes más antiguos.
+
 </details>
 
 ## Idiomas
 
 - Arabic (Árabe)
-- English (inglés)  
-- Persian (persa)  
-- Traditional Chinese (chino tradicional)  
-- Simplified Chinese (chino simplificado)  
-- Japanese (japonés)  
-- Russian (ruso)  
-- Vietnamese (vietnamita)  
-- Spanish (español)  
-- Indonesian (indonesio)  
-- Ukrainian (ucraniano)  
-- Turkish (turco)  
-- Português (Brazil) (portugués (Brasil))  
-
+- English (inglés)
+- Persian (persa)
+- Traditional Chinese (chino tradicional)
+- Simplified Chinese (chino simplificado)
+- Japanese (japonés)
+- Russian (ruso)
+- Vietnamese (vietnamita)
+- Spanish (español)
+- Indonesian (indonesio)
+- Ukrainian (ucraniano)
+- Turkish (turco)
+- Português (Brazil) (portugués (Brasil))
 
 ## Características
 
@@ -298,7 +318,6 @@ Nuestra plataforma ofrece compatibilidad con una amplia gama de arquitecturas y 
 - Soporta exportar/importar base de datos desde el panel
 - Actualizador de aplicaciones integrado
 
-
 ## Configuración Predeterminada del Panel
 
 <details>
@@ -309,34 +328,38 @@ Nuestra plataforma ofrece compatibilidad con una amplia gama de arquitecturas y 
 Si elige no modificar estas configuraciones, se generarán aleatoriamente (esto no se aplica a Docker).
 
 **Configuraciones predeterminadas para Docker:**
+
 - **Nombre de usuario:** admin
 - **Contraseña:** admin
 - **Puerto:** 2053
 
 ### Gestión de la Base de Datos:
 
-  Puedes realizar copias de seguridad y restauraciones de la base de datos directamente desde el panel.
+Puedes realizar copias de seguridad y restauraciones de la base de datos directamente desde el panel.
 
 - **Ruta de la Base de Datos:**
-  - `/etc/x-ui/x-ui.db`
+    - `/etc/x-ui/x-ui.db`
 
 ### Ruta Base Web
 
 1. **Restablecer la Ruta Base Web:**
-   - Abre tu terminal.
-   - Ejecuta el comando `x-ui`.
-   - Selecciona la opción `Restablecer la Ruta Base Web`.
+    - Abre tu terminal.
+    - Ejecuta el comando `x-ui`.
+    - Selecciona la opción `Restablecer la Ruta Base Web`.
 
 2. **Generar o Personalizar la Ruta:**
-   - La ruta se generará aleatoriamente, o puedes ingresar una ruta personalizada.
+    - La ruta se generará aleatoriamente, o puedes ingresar una ruta personalizada.
 
 3. **Ver Configuración Actual:**
-   - Para ver tu configuración actual, utiliza el comando `x-ui settings` en el terminal o selecciona `Ver Configuración Actual` en `x-ui`.
+    - Para ver tu configuración actual, utiliza el comando `x-ui settings` en el terminal o selecciona
+      `Ver Configuración Actual` en `x-ui`.
 
 ### Recomendación de Seguridad:
+
 - Para mayor seguridad, utiliza una palabra larga y aleatoria en la estructura de tu URL.
 
 **Ejemplos:**
+
 - `http://ip:port/*webbasepath*/panel`
 - `http://domain:port/*webbasepath*/panel`
 
@@ -351,19 +374,21 @@ Si elige no modificar estas configuraciones, se generarán aleatoriamente (esto 
 
 **Nota:** El Límite de IP no funcionará correctamente cuando uses Túnel IP.
 
-Para habilitar la funcionalidad de límite de IP, necesitas instalar `fail2ban` y los archivos requeridos siguiendo estos pasos:
+Para habilitar la funcionalidad de límite de IP, necesitas instalar `fail2ban` y los archivos requeridos siguiendo estos
+pasos:
 
 1. Ejecuta el comando `x-ui` en el terminal, luego elige `Gestión de Límite de IP`.
 2. Verás las siguientes opciones:
 
-   - **Cambiar la Duración del Bloqueo:** Ajustar la duración de los bloqueos.
-   - **Desbloquear a Todos:** Levantar todos los bloqueos actuales.
-   - **Revisar los Registros:** Revisar los registros.
-   - **Estado de Fail2ban:** Verificar el estado de `fail2ban`.
-   - **Reiniciar Fail2ban:** Reiniciar el servicio `fail2ban`.
-   - **Desinstalar Fail2ban:** Desinstalar Fail2ban con la configuración.
+    - **Cambiar la Duración del Bloqueo:** Ajustar la duración de los bloqueos.
+    - **Desbloquear a Todos:** Levantar todos los bloqueos actuales.
+    - **Revisar los Registros:** Revisar los registros.
+    - **Estado de Fail2ban:** Verificar el estado de `fail2ban`.
+    - **Reiniciar Fail2ban:** Reiniciar el servicio `fail2ban`.
+    - **Desinstalar Fail2ban:** Desinstalar Fail2ban con la configuración.
 
-3. Agrega una ruta para el registro de acceso en el panel configurando `Xray Configs/log/Access log` a `./access.log`, luego guarda y reinicia Xray.
+3. Agrega una ruta para el registro de acceso en el panel configurando `Xray Configs/log/Access log` a `./access.log`,
+   luego guarda y reinicia Xray.
 
 </details>
 
@@ -374,7 +399,9 @@ Para habilitar la funcionalidad de límite de IP, necesitas instalar `fail2ban` 
 
 #### Uso
 
-El panel web admite tráfico diario, inicio de sesión en el panel, copia de seguridad de la base de datos, estado del sistema, información del cliente y otras notificaciones y funciones a través del Bot de Telegram. Para usar el bot, debes establecer los parámetros relacionados con el bot en el panel, que incluyen:
+El panel web admite tráfico diario, inicio de sesión en el panel, copia de seguridad de la base de datos, estado del
+sistema, información del cliente y otras notificaciones y funciones a través del Bot de Telegram. Para usar el bot,
+debes establecer los parámetros relacionados con el bot en el panel, que incluyen:
 
 - Token de Telegram
 - ID de chat de administrador(es)
@@ -383,7 +410,6 @@ El panel web admite tráfico diario, inicio de sesión en el panel, copia de seg
 - Notificación de Capacidad de Tráfico
 - Copia de seguridad de la base de datos
 - Notificación de Carga de CPU
-
 
 **Sintaxis de referencia:**
 
@@ -400,7 +426,8 @@ El panel web admite tráfico diario, inicio de sesión en el panel, copia de seg
 - Notificación de inicio de sesión
 - Notificación de umbral de CPU
 - Umbral de Notificación para Fecha de Caducidad y Tráfico para informar con anticipación
-- Soporte para menú de reporte de cliente si el nombre de usuario de Telegram del cliente se agrega a las configuraciones de usuario
+- Soporte para menú de reporte de cliente si el nombre de usuario de Telegram del cliente se agrega a las
+  configuraciones de usuario
 - Soporte para reporte de tráfico de Telegram buscado con UUID (VMESS/VLESS) o Contraseña (TROJAN) - anónimamente
 - Bot basado en menú
 - Buscar cliente por correo electrónico (solo administrador)
@@ -413,22 +440,25 @@ El panel web admite tráfico diario, inicio de sesión en el panel, copia de seg
 ### Configuración del Bot de Telegram
 
 - Inicia [Botfather](https://t.me/BotFather) en tu cuenta de Telegram:
-    ![Botfather](./media/botfather.png)
+  ![Botfather](./media/botfather.png)
 
-- Crea un nuevo bot usando el comando /newbot: Te hará 2 preguntas, Un nombre y un nombre de usuario para tu bot. Ten en cuenta que el nombre de usuario debe terminar con la palabra "bot".
-    ![Create new bot](./media/newbot.png)
+- Crea un nuevo bot usando el comando /newbot: Te hará 2 preguntas, Un nombre y un nombre de usuario para tu bot. Ten en
+  cuenta que el nombre de usuario debe terminar con la palabra "bot".
+  ![Create new bot](./media/newbot.png)
 
 - Inicia el bot que acabas de crear. Puedes encontrar el enlace a tu bot aquí.
-    ![token](./media/token.png)
+  ![token](./media/token.png)
 
 - Ingresa a tu panel y configura los ajustes del bot de Telegram como se muestra a continuación:
-![Panel Config](./media/panel-bot-config.png)
+  ![Panel Config](./media/panel-bot-config.png)
 
 Ingresa el token de tu bot en el campo de entrada número 3.
-Ingresa el ID de chat de usuario en el campo de entrada número 4. Las cuentas de Telegram con esta ID serán los administradores del bot. (Puedes ingresar más de uno, solo sepáralos con ,)
+Ingresa el ID de chat de usuario en el campo de entrada número 4. Las cuentas de Telegram con esta ID serán los
+administradores del bot. (Puedes ingresar más de uno, solo sepáralos con ,)
 
-- ¿Cómo obtener el ID de chat de Telegram? Usa este [bot](https://t.me/useridinfobot), Inicia el bot y te dará el ID de chat del usuario de Telegram.
-![User ID](./media/user-id.png)
+- ¿Cómo obtener el ID de chat de Telegram? Usa este [bot](https://t.me/useridinfobot), Inicia el bot y te dará el ID de
+  chat del usuario de Telegram.
+  ![User ID](./media/user-id.png)
 
 </details>
 
@@ -443,27 +473,28 @@ Ingresa el ID de chat de usuario en el campo de entrada número 4. Las cuentas d
 - `/login` con `POST` datos de usuario: `{username: '', password: ''}` para iniciar sesión
 - `/panel/api/inbounds` base para las siguientes acciones:
 
-| Método | Ruta                               | Acción                                                    |
-| :----: | ---------------------------------- | --------------------------------------------------------- |
-| `GET`  | `"/list"`                          | Obtener todas los Entradas                                |
-| `GET`  | `"/get/:id"`                       | Obtener Entrada con inbound.id                            |
-| `GET`  | `"/getClientTraffics/:email"`      | Obtener Tráficos del Cliente con email                    |
-| `GET`  | `"/createbackup"`                  | El bot de Telegram envía copia de seguridad a los admins  |
-| `POST` | `"/add"`                           | Agregar Entrada                                           |
-| `POST` | `"/del/:id"`                       | Eliminar Entrada                                          |
-| `POST` | `"/update/:id"`                    | Actualizar Entrada                                        |
-| `POST` | `"/clientIps/:email"`              | Dirección IP del Cliente                                  |
-| `POST` | `"/clearClientIps/:email"`         | Borrar Dirección IP del Cliente                           |
-| `POST` | `"/addClient"`                     | Agregar Cliente a la Entrada                              |
-| `POST` | `"/:id/delClient/:clientId"`       | Eliminar Cliente por clientId\*                           |
-| `POST` | `"/updateClient/:clientId"`        | Actualizar Cliente por clientId\*                         |
-| `POST` | `"/:id/resetClientTraffic/:email"` | Restablecer Tráfico del Cliente                           |
-| `POST` | `"/resetAllTraffics"`              | Restablecer tráfico de todos las Entradas                 |
-| `POST` | `"/resetAllClientTraffics/:id"`    | Restablecer tráfico de todos los clientes en una Entrada  |
-| `POST` | `"/delDepletedClients/:id"`        | Eliminar clientes agotados de la entrada (-1: todos)      |
-| `POST` | `"/onlines"`                       | Obtener usuarios en línea (lista de correos electrónicos) |
-| `POST` | `"/depleted"`                      | Obtener usuarios agotados (lista de correos electrónicos) |
-| `POST` | `"/disabled"`                      | Obtener usuarios desactivado (lista de correos electrónicos) |
+| Método | Ruta                               | Acción                                                                               |
+|:------:|------------------------------------|--------------------------------------------------------------------------------------|
+| `GET`  | `"/list"`                          | Obtener todas los Entradas                                                           |
+| `GET`  | `"/get/:id"`                       | Obtener Entrada con inbound.id                                                       |
+| `GET`  | `"/getClientTraffics/:email"`      | Obtener Tráficos del Cliente con email                                               |
+| `GET`  | `"/createbackup"`                  | El bot de Telegram envía copia de seguridad a los admins                             |
+| `POST` | `"/add"`                           | Agregar Entrada                                                                      |
+| `POST` | `"/del/:id"`                       | Eliminar Entrada                                                                     |
+| `POST` | `"/update/:id"`                    | Actualizar Entrada                                                                   |
+| `POST` | `"/clientIps/:email"`              | Dirección IP del Cliente                                                             |
+| `POST` | `"/clearClientIps/:email"`         | Borrar Dirección IP del Cliente                                                      |
+| `POST` | `"/addClient"`                     | Agregar Cliente a la Entrada                                                         |
+| `POST` | `"/:id/delClient/:clientId"`       | Eliminar Cliente por clientId\*                                                      |
+| `POST` | `"/updateClient/:clientId"`        | Actualizar Cliente por clientId\*                                                    |
+| `POST` | `"/updateClientTraffic/:email"`    | Actualizar el tráfico del cliente por correo electrónico, los valores están en bytes |
+| `POST` | `"/:id/resetClientTraffic/:email"` | Restablecer Tráfico del Cliente                                                      |
+| `POST` | `"/resetAllTraffics"`              | Restablecer tráfico de todos las Entradas                                            |
+| `POST` | `"/resetAllClientTraffics/:id"`    | Restablecer tráfico de todos los clientes en una Entrada                             |
+| `POST` | `"/delDepletedClients/:id"`        | Eliminar clientes agotados de la entrada (-1: todos)                                 |
+| `POST` | `"/onlines"`                       | Obtener usuarios en línea (lista de correos electrónicos)                            |
+| `POST` | `"/depleted"`                      | Obtener usuarios agotados (lista de correos electrónicos)                            |
+| `POST` | `"/disabled"`                      | Obtener usuarios desactivado (lista de correos electrónicos)                         |
 
 \*- El campo `clientId` debe llenarse por:
 
@@ -473,10 +504,10 @@ Ingresa el ID de chat de usuario en el campo de entrada número 4. Las cuentas d
 
 `/panel/api/server` base para las siguientes acciones:
 
-| Método | Ruta             | Acción            |
-|:------:|------------------|-------------------|
+| Método | Ruta             | Acción                         |
+|:------:|------------------|--------------------------------|
 | `GET`  | `"/status"`      | Obtener el estado del servidor |
-| `GET`  | `"/restartCore"` | Reanudar xray-core |
+| `GET`  | `"/restartCore"` | Reanudar xray-core             |
 
 [<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://app.getpostman.com/run-collection/5146551-dda3cab3-0e33-485f-96f9-d4262f437ac5?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D5146551-dda3cab3-0e33-485f-96f9-d4262f437ac5%26entityType%3Dcollection%26workspaceId%3Dd64f609f-485a-4951-9b8f-876b3f917124)
 </details>
@@ -489,7 +520,7 @@ Ingresa el ID de chat de usuario en el campo de entrada número 4. Las cuentas d
 #### Uso
 
 | Variable       |                      Tipo                      | Predeterminado |
-| -------------- | :--------------------------------------------: | :------------- |
+|----------------|:----------------------------------------------:|:---------------|
 | XUI_LOG_LEVEL  | `"debug"` \| `"info"` \| `"warn"` \| `"error"` | `"info"`       |
 | XUI_DEBUG      |                   `boolean`                    | `false`        |
 | XUI_BIN_FOLDER |                    `string`                    | `"bin"`        |
@@ -505,16 +536,23 @@ XUI_BIN_FOLDER="bin" XUI_DB_FOLDER="/etc/x-ui" go build main.go
 </details>
 
 ## Interfaz de usuario de suscripción
-Puedes usar este repositorio para crear una interfaz de usuario de suscripción para tu panel [TX-UI Theming Hub](https://github.com/AghayeCoder/TX-ThemeHub)
+
+Puedes usar este repositorio para crear una interfaz de usuario de suscripción para tu
+panel [TX-UI Theming Hub](https://github.com/AghayeCoder/TX-ThemeHub)
 
 ## Gracias a
+
 - [@Incognito-Coder](https://github.com/incognito-coder) por su contribución en este proyecto
 - un agradecimiento especial a todos los colaboradores
 
 ## Reconocimientos
 
-- [Iran v2ray rules](https://github.com/chocolate4u/Iran-v2ray-rules) (Licencia: **GPL-3.0**): _Reglas de enrutamiento mejoradas de v2ray/xray y v2ray/xray-clients con dominios iraníes integrados y un enfoque en seguridad y bloqueo de anuncios._
-- [Russia v2ray rules](https://github.com/runetfreedom/russia-v2ray-rules-dat) (License: **GPL-3.0**): _Este repositorio contiene reglas de enrutamiento de V2Ray actualizadas automáticamente basadas en datos de dominios y direcciones bloqueados en Rusia._
+- [Iran v2ray rules](https://github.com/chocolate4u/Iran-v2ray-rules) (Licencia: **GPL-3.0**): _Reglas de enrutamiento
+  mejoradas de v2ray/xray y v2ray/xray-clients con dominios iraníes integrados y un enfoque en seguridad y bloqueo de
+  anuncios._
+- [Russia v2ray rules](https://github.com/runetfreedom/russia-v2ray-rules-dat) (License: **GPL-3.0**): _Este repositorio
+  contiene reglas de enrutamiento de V2Ray actualizadas automáticamente basadas en datos de dominios y direcciones
+  bloqueados en Rusia._
 
 ## Estrellas a lo largo del tiempo
 

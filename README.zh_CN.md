@@ -38,11 +38,11 @@ bash <(curl -Ls https://raw.githubusercontent.com/AghayeCoder/tx-ui/master/insta
 2. 在终端中运行 `x-ui` 命令，然后选择 `SSL证书管理`。
 3. 您将看到以下选项：
 
-   - **Get SSL:** 获取SSL证书。
-   - **Revoke:** 吊销现有的SSL证书。
-   - **Force Renew:** 强制更新SSL证书。
-   - **Show Existing Domains:** 显示服务器上所有可用的域证书。  
-   - **Set Certificate Paths for the Panel:** 指定用于面板的域证书。
+    - **Get SSL:** 获取SSL证书。
+    - **Revoke:** 吊销现有的SSL证书。
+    - **Force Renew:** 强制更新SSL证书。
+    - **Show Existing Domains:** 显示服务器上所有可用的域证书。
+    - **Set Certificate Paths for the Panel:** 指定用于面板的域证书。
 
 ### Certbot
 
@@ -72,7 +72,7 @@ certbot renew --dry-run
    ![](media/APIKey2.png)
 
 使用时，只需输入您的 `域名`、`电子邮件` 和 `API密钥`。如下图所示：
-   ![](media/DetailEnter.png)
+![](media/DetailEnter.png)
 
 </details>
 
@@ -188,12 +188,13 @@ systemctl restart x-ui
 
 </details>
 
-
 ## Nginx 设置
+
 <details>
   <summary>点击查看 反向代理配置</summary>
 
 #### Nginx反向代理
+
 ```nginx
 location / {
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -208,8 +209,9 @@ location / {
 ```
 
 #### Nginx子路径
+
 - 确保 `/sub` 面板设置中的"面板url根路径"一致
-- 面板设置中的 `url` 需要以 `/` 结尾   
+- 面板设置中的 `url` 需要以 `/` 结尾
 
 ```nginx
 location /sub {
@@ -223,6 +225,7 @@ location /sub {
     proxy_pass http://127.0.0.1:2053;
 }
 ```
+
 </details>
 
 ## 建议使用的操作系统
@@ -244,6 +247,7 @@ location /sub {
 - Windows x64
 
 ## 支持的架构和设备
+
 <details>
   <summary>点击查看 支持的架构和设备</summary>
 
@@ -251,33 +255,38 @@ location /sub {
 
 - **amd64**: 这种流行的架构是个人计算机和服务器的标准，可以无缝地适应大多数现代操作系统。
 
-- **x86 / i386**: 这种架构在台式机和笔记本电脑中被广泛采用，得到了众多操作系统和应用程序的广泛支持，包括但不限于 Windows、macOS 和 Linux 系统。
+- **x86 / i386**: 这种架构在台式机和笔记本电脑中被广泛采用，得到了众多操作系统和应用程序的广泛支持，包括但不限于
+  Windows、macOS 和 Linux 系统。
 
-- **armv8 / arm64 / aarch64**: 这种架构专为智能手机和平板电脑等当代移动和嵌入式设备量身定制，以 Raspberry Pi 4、Raspberry Pi 3、Raspberry Pi Zero 2/Zero 2 W、Orange Pi 3 LTS 等设备为例。
+- **armv8 / arm64 / aarch64**: 这种架构专为智能手机和平板电脑等当代移动和嵌入式设备量身定制，以 Raspberry Pi 4、Raspberry
+  Pi 3、Raspberry Pi Zero 2/Zero 2 W、Orange Pi 3 LTS 等设备为例。
 
-- **armv7 / arm / arm32**: 作为较旧的移动和嵌入式设备的架构，它仍然广泛用于Orange Pi Zero LTS、Orange Pi PC Plus、Raspberry Pi 2等设备。
+- **armv7 / arm / arm32**: 作为较旧的移动和嵌入式设备的架构，它仍然广泛用于Orange Pi Zero LTS、Orange Pi PC Plus、Raspberry
+  Pi 2等设备。
 
-- **armv6 / arm / arm32**: 这种架构面向非常老旧的嵌入式设备，虽然不太普遍，但仍在使用中。Raspberry Pi 1、Raspberry Pi Zero/Zero W 等设备都依赖于这种架构。
+- **armv6 / arm / arm32**: 这种架构面向非常老旧的嵌入式设备，虽然不太普遍，但仍在使用中。Raspberry Pi 1、Raspberry Pi
+  Zero/Zero W 等设备都依赖于这种架构。
 
-- **armv5 / arm / arm32**: 它是一种主要与早期嵌入式系统相关的旧架构，目前不太常见，但仍可能出现在早期 Raspberry Pi 版本和一些旧智能手机等传统设备中。
+- **armv5 / arm / arm32**: 它是一种主要与早期嵌入式系统相关的旧架构，目前不太常见，但仍可能出现在早期 Raspberry Pi
+  版本和一些旧智能手机等传统设备中。
+
 </details>
 
 ## Languages
 
 - Arabic (阿拉伯)
-- English（英语）  
-- Persian（波斯语）  
-- Traditional Chinese（繁体中文）  
-- Simplified Chinese（简体中文）  
-- Japanese（日语）  
-- Russian（俄语）  
-- Vietnamese（越南语）  
-- Spanish（西班牙语）  
-- Indonesian（印尼语）  
-- Ukrainian（乌克兰语）  
-- Turkish（土耳其语）  
+- English（英语）
+- Persian（波斯语）
+- Traditional Chinese（繁体中文）
+- Simplified Chinese（简体中文）
+- Japanese（日语）
+- Russian（俄语）
+- Vietnamese（越南语）
+- Spanish（西班牙语）
+- Indonesian（印尼语）
+- Ukrainian（乌克兰语）
+- Turkish（土耳其语）
 - Português (Brazil)（葡萄牙语（巴西））
-
 
 ## Features
 
@@ -296,7 +305,6 @@ location /sub {
 - 支持通过面板中提供的不同项目更改配置。
 - 支持从面板导出/导入数据库
 
-
 ## 默认面板设置
 
 <details>
@@ -307,34 +315,37 @@ location /sub {
 如果您选择不修改这些设置，它们将随机生成（不适用于 Docker）。
 
 **Docker 的默认设置：**
+
 - **用户名：** admin
 - **密码：** admin
 - **端口：** 2053
 
 ### 数据库管理：
 
-  您可以直接在面板中方便地进行数据库备份和还原。
+您可以直接在面板中方便地进行数据库备份和还原。
 
 - **数据库路径:**
-  - `/etc/x-ui/x-ui.db`
+    - `/etc/x-ui/x-ui.db`
 
 ### Web 基础路径
 
 1. **重置 Web 基础路径:**
-   - 打开终端。
-   - 运行 `x-ui` 命令。
-   - 选择 `重置 Web 基础路径` 选项。
+    - 打开终端。
+    - 运行 `x-ui` 命令。
+    - 选择 `重置 Web 基础路径` 选项。
 
 2. **生成或自定义路径:**
-   - 路径将会随机生成，或者您可以输入自定义路径。
+    - 路径将会随机生成，或者您可以输入自定义路径。
 
 3. **查看当前设置:**
-   - 要查看当前设置，请在终端中使用 `x-ui settings` 命令，或在 `x-ui` 面板中点击 `查看当前设置`。
+    - 要查看当前设置，请在终端中使用 `x-ui settings` 命令，或在 `x-ui` 面板中点击 `查看当前设置`。
 
 ### 安全建议：
+
 - 为了提高安全性，建议在URL结构中使用一个长的随机词。
 
 **示例：**
+
 - `http://ip:port/*webbasepath*/panel`
 - `http://domain:port/*webbasepath*/panel`
 
@@ -363,7 +374,7 @@ WARP 已内置，无需额外安装。只需在面板中开启相关配置即可
 **注意:** 当使用 IP 隧道时，IP 限制将无法正常工作。
 
 - **对于 `v1.6.1` 及之前的版本：**
-  - IP 限制功能已内置于面板中。
+    - IP 限制功能已内置于面板中。
 
 **对于 `v1.7.0` 及更新的版本：**
 
@@ -372,28 +383,28 @@ WARP 已内置，无需额外安装。只需在面板中开启相关配置即可
 1. 在终端中运行 `x-ui` 命令，然后选择 `IP 限制管理`。
 2. 您将看到以下选项：
 
-   - **更改封禁时长:** 调整封禁时长。
-   - **解除所有封禁:** 解除当前的所有封禁。
-   - **查看日志:** 查看日志。
-   - **Fail2ban 状态:** 检查 `fail2ban` 的状态。
-   - **重启 Fail2ban:** 重启 `fail2ban` 服务。
-   - **卸载 Fail2ban:** 卸载带有配置的 Fail2ban。
+    - **更改封禁时长:** 调整封禁时长。
+    - **解除所有封禁:** 解除当前的所有封禁。
+    - **查看日志:** 查看日志。
+    - **Fail2ban 状态:** 检查 `fail2ban` 的状态。
+    - **重启 Fail2ban:** 重启 `fail2ban` 服务。
+    - **卸载 Fail2ban:** 卸载带有配置的 Fail2ban。
 
 3. 在面板中通过设置 `Xray 配置/log/访问日志` 为 `./access.log` 添加访问日志路径，然后保存并重启 Xray。
 
 - **对于 `v2.1.3` 之前的版本：**
-  - 您需要在 Xray 配置中手动设置访问日志路径：
+    - 您需要在 Xray 配置中手动设置访问日志路径：
 
-    ```sh
-    "log": {
-      "access": "./access.log",
-      "dnsLog": false,
-      "loglevel": "warning"
-    },
-    ```
+      ```sh
+      "log": {
+        "access": "./access.log",
+        "dnsLog": false,
+        "loglevel": "warning"
+      },
+      ```
 
 - **对于 `v2.1.3` 及之后的版本：**
-  - 面板中直接提供了配置 `access.log` 的选项。
+    - 面板中直接提供了配置 `access.log` 的选项。
 
 </details>
 
@@ -413,7 +424,6 @@ Web 面板通过 Telegram Bot 支持每日流量、面板登录、数据库备�
 - 流量上限通知
 - 数据库备份
 - CPU 负载通知
-
 
 **参考：**
 
@@ -443,22 +453,22 @@ Web 面板通过 Telegram Bot 支持每日流量、面板登录、数据库备�
 ### 注册 Telegram bot
 
 - 与 [Botfather](https://t.me/BotFather) 对话：
-    ![Botfather](./media/botfather.png)
+  ![Botfather](./media/botfather.png)
 
 - 使用 /newbot 创建新机器人：你需要提供机器人名称以及用户名，注意名称中末尾要包含“bot”
-    ![创建机器人](./media/newbot.png)
+  ![创建机器人](./media/newbot.png)
 
 - 启动您刚刚创建的机器人。可以在此处找到机器人的链接。
-    ![令牌](./media/token.png)
+  ![令牌](./media/token.png)
 
 - 输入您的面板并配置 Telegram 机器人设置，如下所示：
-    ![面板设置](./media/panel-bot-config.png)
+  ![面板设置](./media/panel-bot-config.png)
 
 在输入字段编号 3 中输入机器人令牌。
 在输入字段编号 4 中输入用户 ID。具有此 id 的 Telegram 帐户将是机器人管理员。 （您可以输入多个，只需将它们用“ ，”分开即可）
 
 - 如何获取TG ID? 使用 [bot](https://t.me/useridinfobot)， 启动机器人，它会给你 Telegram 用户 ID。
-![用户 ID](./media/user-id.png)
+  ![用户 ID](./media/user-id.png)
 
 </details>
 
@@ -473,27 +483,28 @@ Web 面板通过 Telegram Bot 支持每日流量、面板登录、数据库备�
 - `/login` 使用 `POST` 用户名称 & 密码： `{username: '', password: ''}` 登录
 - `/panel/api/inbounds` 以下操作的基础：
 
-|  方法  | 路径                               | 操作                              |
-| :----: | ---------------------------------- | --------------------------------- |
-| `GET`  | `"/list"`                          | 获取所有入站                      |
-| `GET`  | `"/get/:id"`                       | 获取所有入站以及inbound.id        |
-| `GET`  | `"/getClientTraffics/:email"`      | 通过电子邮件获取客户端流量        |
-| `GET`  | `"/createbackup"`                  | Telegram 机器人向管理员发送备份   |
-| `POST` | `"/add"`                           | 添加入站                          |
-| `POST` | `"/del/:id"`                       | 删除入站                          |
-| `POST` | `"/update/:id"`                    | 更新入站                          |
-| `POST` | `"/clientIps/:email"`              | 客户端 IP 地址                    |
-| `POST` | `"/clearClientIps/:email"`         | 清除客户端 IP 地址                |
-| `POST` | `"/addClient"`                     | 将客户端添加到入站                |
-| `POST` | `"/:id/delClient/:clientId"`       | 通过 clientId\* 删除客户端        |
-| `POST` | `"/updateClient/:clientId"`        | 通过 clientId\* 更新客户端        |
-| `POST` | `"/:id/resetClientTraffic/:email"` | 重置客户端的流量                  |
-| `POST` | `"/resetAllTraffics"`              | 重置所有入站的流量                |
-| `POST` | `"/resetAllClientTraffics/:id"`    | 重置入站中所有客户端的流量        |
-| `POST` | `"/delDepletedClients/:id"`        | 删除入站耗尽的客户端 （-1： all） |
-| `POST` | `"/onlines"`                       | 获取在线用户 （ 电子邮件列表 ）   |
-| `POST` | `"/depleted"`                      | 获取耗尽的用户（电子邮件列表）    |
-| `POST` | `"/disabled"`                      | 获取已禁用用户（电子邮件列表）    |
+|   方法   | 路径                                 | 操作                    |
+|:------:|------------------------------------|-----------------------|
+| `GET`  | `"/list"`                          | 获取所有入站                |
+| `GET`  | `"/get/:id"`                       | 获取所有入站以及inbound.id    |
+| `GET`  | `"/getClientTraffics/:email"`      | 通过电子邮件获取客户端流量         |
+| `GET`  | `"/createbackup"`                  | Telegram 机器人向管理员发送备份  |
+| `POST` | `"/add"`                           | 添加入站                  |
+| `POST` | `"/del/:id"`                       | 删除入站                  |
+| `POST` | `"/update/:id"`                    | 更新入站                  |
+| `POST` | `"/clientIps/:email"`              | 客户端 IP 地址             |
+| `POST` | `"/clearClientIps/:email"`         | 清除客户端 IP 地址           |
+| `POST` | `"/addClient"`                     | 将客户端添加到入站             |
+| `POST` | `"/:id/delClient/:clientId"`       | 通过 clientId\* 删除客户端   |
+| `POST` | `"/updateClient/:clientId"`        | 通过 clientId\* 更新客户端   |
+| `POST` | `"/updateClientTraffic/:email"`    | 通过电子邮件更新客户端流量，值以字节为单位 |
+| `POST` | `"/:id/resetClientTraffic/:email"` | 重置客户端的流量              |
+| `POST` | `"/resetAllTraffics"`              | 重置所有入站的流量             |
+| `POST` | `"/resetAllClientTraffics/:id"`    | 重置入站中所有客户端的流量         |
+| `POST` | `"/delDepletedClients/:id"`        | 删除入站耗尽的客户端 （-1： all）  |
+| `POST` | `"/onlines"`                       | 获取在线用户 （ 电子邮件列表 ）     |
+| `POST` | `"/depleted"`                      | 获取耗尽的用户（电子邮件列表）       |
+| `POST` | `"/disabled"`                      | 获取已禁用用户（电子邮件列表）       |
 
 \*- `clientId` 项应该使用下列数据
 
@@ -502,6 +513,7 @@ Web 面板通过 Telegram Bot 支持每日流量、面板登录、数据库备�
 - `client.email`  Shadowsocks
 
 - [<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://app.getpostman.com/run-collection/5146551-dda3cab3-0e33-485f-96f9-d4262f437ac5?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D5146551-dda3cab3-0e33-485f-96f9-d4262f437ac5%26entityType%3Dcollection%26workspaceId%3Dd64f609f-485a-4951-9b8f-876b3f917124)
+
 </details>
 
 ## 环境变量
@@ -511,8 +523,8 @@ Web 面板通过 Telegram Bot 支持每日流量、面板登录、数据库备�
 
 #### Usage
 
-| 变量           |                      Type                      | 默认          |
-| -------------- | :--------------------------------------------: | :------------ |
+| 变量             |                      Type                      | 默认            |
+|----------------|:----------------------------------------------:|:--------------|
 | XUI_LOG_LEVEL  | `"debug"` \| `"info"` \| `"warn"` \| `"error"` | `"info"`      |
 | XUI_DEBUG      |                   `boolean`                    | `false`       |
 | XUI_BIN_FOLDER |                    `string`                    | `"bin"`       |
@@ -528,16 +540,20 @@ XUI_BIN_FOLDER="bin" XUI_DB_FOLDER="/etc/x-ui" go build main.go
 </details>
 
 ## 订阅 UI
+
 您可以使用此代码库为您的面板创建订阅 UI [TX-UI 主题中心](https://github.com/AghayeCoder/TX-ThemeHub)
 
 ## 感谢
+
 - [@Incognito-Coder](https://github.com/incognito-coder) 对本项目的贡献
 - 特别感谢所有贡献者
 
 ## 致谢
 
-- [Iran v2ray rules](https://github.com/chocolate4u/Iran-v2ray-rules) (License: **GPL-3.0**): _Enhanced v2ray/xray and v2ray/xray-clients routing rules with built-in Iranian domains and a focus on security and adblocking._
-- [Russia v2ray rules](https://github.com/runetfreedom/russia-v2ray-rules-dat) (License: **GPL-3.0**): _This repository contains automatically updated V2Ray routing rules based on data on blocked domains and addresses in Russia._
+- [Iran v2ray rules](https://github.com/chocolate4u/Iran-v2ray-rules) (License: **GPL-3.0**): _Enhanced v2ray/xray and
+  v2ray/xray-clients routing rules with built-in Iranian domains and a focus on security and adblocking._
+- [Russia v2ray rules](https://github.com/runetfreedom/russia-v2ray-rules-dat) (License: **GPL-3.0**): _This repository
+  contains automatically updated V2Ray routing rules based on data on blocked domains and addresses in Russia._
 
 ## Star趋势
 

@@ -255,6 +255,59 @@ config_after_install() {
     /usr/local/x-ui/x-ui migrate
 }
 
+##############################Random Fake Site############################################################
+if [[ ${RNDTMPL} == *"y"* ]]; then
+
+cd "$HOME" || exit 1
+
+if [[ ! -d "randomfakehtml-master" ]]; then
+    wget https://github.com/GFW4Fun/randomfakehtml/archive/refs/heads/master.zip
+    unzip master.zip && rm -f master.zip
+fi
+
+cd randomfakehtml-master || exit 1
+rm -rf assets ".gitattributes" "README.md" "_config.yml"
+
+RandomHTML=$(for i in *; do echo "$i"; done | shuf -n1 2>&1)
+msg_inf "Random template name: ${RandomHTML}"
+
+if [[ -d "${RandomHTML}" && -d "/var/www/html/" ]]; then
+	rm -rf /var/www/html/*
+	cp -a "${RandomHTML}"/. "/var/www/html/"
+	msg_ok "Template extracted successfully!" && exit 1
+else
+	msg_err "Extraction error!" && exit 1
+fi
+
+fi
+##############################Uninstall##################################################################
+if [[ "${UNINSTALL}" == *"y"* ]]; then
+	echo "nginx nginx-full nginx-core nginx-common nginx-extras tor" | xargs -n 1 $Pak -y remove
+	for service in nginx tor x-ui warp-plus v2raya xray; do
+		systemctl stop "$service" > /dev/null 2>&1
+		systemctl disable "$service" > /dev/null 2>&1
+	done
+ 	printf 'n' | bash <(wget -qO- https://github.com/v2rayA/v2rayA-installer/raw/main/uninstaller.sh) 
+ 	rm -rf /etc/warp-plus/ /etc/nginx/sites-enabled/*
+	crontab -l | grep -v "nginx\|systemctl\|x-ui\|v2ray" | crontab -	
+	command -v x-ui &> /dev/null && printf 'y\n' | x-ui uninstall
+	
+	clear && msg_ok "Completely Uninstalled!" && exit 1
+fi
+##############################Domain Validations#########################################################
+while [[ -z $(echo "$domain" | tr -d '[:space:]') ]]; do
+	read -rp $'\e[1;32;40m Enter available subdomain (sub.domain.tld): \e[0m' domain
+done
+
+domain=$(echo "$domain" 2>&1 | tr -d '[:space:]' )
+SubDomain=$(echo "$domain" 2>&1 | sed 's/^[^ ]* \|\..*//g')
+MainDomain=$(echo "$domain" 2>&1 | sed 's/.*\.\([^.]*\..*\)$/\1/')
+
+if [[ "${SubDomain}.${MainDomain}" != "${domain}" ]] ; then
+	MainDomain=${domain}
+fi
+}
+
 install_x-ui() {
     cd /usr/local/
 
